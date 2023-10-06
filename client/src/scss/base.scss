@@ -1,0 +1,123 @@
+@use "variables" as var;
+@use "bootstrap" as bs;
+
+@use "~@fortawesome/fontawesome-free/scss/fontawesome";
+@use "~@fortawesome/fontawesome-free/scss/solid";
+@use "~@fortawesome/fontawesome-free/scss/brands";
+@use "~@fortawesome/fontawesome-free/scss/regular";
+
+
+button,
+a {
+    cursor: pointer;
+    text-align: center;
+
+    .await {
+        display: none;
+    }
+
+    &:disabled,
+    &.disabled {
+        .await {
+            display: inline-block;
+
+            &+i,
+            &+span {
+                display: none;
+            }
+        }
+    }
+
+    &.no-cursor {
+        cursor: auto;
+    }
+
+    &:focus {
+        box-shadow: none !important;
+    }
+}
+
+.toast-container {
+    bottom: var.$container-padding-x;
+    left: unset;
+    right: var.$container-padding-x;
+    flex-basis: 350px;
+    z-index: var.$zindex-tooltip;
+
+    .toast {
+        flex-basis: auto;
+
+        button {
+            background-color: transparent;
+            padding-right: var.$container-padding-x;
+        }
+
+        &:not(:last-of-type) {
+            margin-bottom: map-get(var.$spacers, 2);
+        }
+    }
+
+    &:empty {
+        display: none !important;
+    }
+
+    img {
+        height: bs.$img-height;
+        width: bs.$img-width;
+        margin-right: 0.5rem;
+    }
+}
+
+
+.form-floating {
+
+    >.form-control:focus,
+    >.form-control:not(:placeholder-shown),
+    >.form-select {
+        ~label {
+            i {
+                pointer-events: auto;
+            }
+        }
+    }
+
+    >.form-control:-webkit-autofill {
+        ~label {
+            i {
+                pointer-events: auto;
+            }
+        }
+    }
+}
+
+.modal {
+    .nav-tabs {
+        .nav-link.active {
+            background-color: var.$primary;
+        }
+    }
+}
+
+.modal-dialog {
+    max-height: calc(100% - var(--bs-modal-margin) * 2);
+
+    .modal-content {
+        max-height: 100%;
+    }
+}
+
+.border-radius-0 {
+    border-radius: 0;
+}
+
+.text-nospace {
+    font-size: 0;
+}
+
+.text-shadow {
+    text-shadow: var.$text-shadow;
+}
+
+.text-justified {
+    text-align: justify !important;
+}

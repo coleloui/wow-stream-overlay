@@ -1,0 +1,20 @@
+{
+    "dockerComposeFile": [
+        "docker-compose.yml"
+    ],
+    "customizations": {
+        "vscode": {
+            "extentions": [
+                "dbaeumer.vscode-eslint", // ESLint
+                "sibiraj-s.vscode-scss-formatter", // SCSS Formatter
+                "ms-azuretools.vscode-docker"
+            ]
+        }
+    },
+    "name": "WoW-Stream-Overlay",
+    "postCreateCommand": "npm ci -q",
+    "remoteUser": "node",
+    "settings": {},
+    "service": "development",
+    "workspaceFolder": "/usr/src/app"
+}

@@ -1,0 +1,46 @@
+{
+    "version": "0.2.0",
+    "compounds": [
+        {
+            "name": "Start E&R",
+            "configurations": [
+                "Express",
+                "React"
+            ],
+            "stopAll": true
+        }
+    ],
+    "configurations": [
+        {
+            "name": "Express",
+            "outputCapture": "std",
+            "program": "${workspaceFolder}/api/app.js",
+            "request": "launch",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "node"
+        },
+        {
+            "name": "React",
+            "request": "launch",
+            "preLaunchTask": "npm: start",
+            "runtimeExecutable": "exit 0",
+            "type": "node"
+        },
+        {
+            "name": "Debug React",
+            "request": "launch",
+            "runtimeArgs": [
+                "--explicitly-allowed-ports=6666"
+            ],
+            "type": "pwa-chrome",
+            "url": "http://localhost:3000",
+            // "userDataDir": false,
+            "webRoot": "${workspaceFolder}/src",
+        },
+        {
+            "name": "---"
+        }
+    ]
+}
